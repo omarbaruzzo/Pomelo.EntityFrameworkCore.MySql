@@ -24,7 +24,7 @@ In case it is not obvious from the bug description, please provide a clear and c
 
 - Database server version: [e.g. MySQL 8.0.41 or MariaDB 11.6.2]
 - Operating system: [e.g. Windows 11 or Ubuntu 22.04.5 LTS]
-- Pomelo.EntityFrameworkCore.MySql version: [e.g. 8.0.3 or 9.0.0-preview.3.efcore.9.0.0]
+- Pomelo.EntityFrameworkCore.MySql version: [e.g. 10.0.12]
 - Other technical details: [e.g. ASP.NET Core, AWS Lambda, etc.]
 
 **Additional context**

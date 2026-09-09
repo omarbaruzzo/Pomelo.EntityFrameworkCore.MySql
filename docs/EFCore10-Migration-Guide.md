@@ -42,20 +42,20 @@ await context.Products
 
 ## Migration Strategy
 
-### Phase 1: Preparation (Current)
+### Phase 1: Preparation ✅ Completed
 1. ✅ Add conditional compilation support (`EFCORE10_OR_GREATER`, `EFCORE9_OR_GREATER`, `EFCORE8_OR_GREATER`)
 2. ✅ Create `EFCoreCompatibilityHelper` class for version-agnostic patterns
 3. ✅ Document breaking changes and migration patterns
-4. 🔄 Prepare conditional compilation patterns for affected code
+4. ✅ Prepare conditional compilation patterns for affected code
 
-### Phase 2: Implementation (When .NET 10 is available)
-1. Update target framework to `net10.0`
-2. Update EF Core packages to 10.0.x
-3. Apply conditional compilation fixes
-4. Update tests to handle both API versions
-5. Validate compatibility with existing applications
+### Phase 2: Implementation ✅ Completed
+1. ✅ Update target framework to `net10.0`
+2. ✅ Update EF Core packages to 10.0.x
+3. ✅ Apply EF Core 10 API fixes
+4. ✅ Update tests to the EF Core 10 API surface
+5. ✅ Validate compatibility with existing applications
 
-### Phase 3: Migration (After EF Core 10 RTM)
+### Phase 3: Migration ✅ Completed (EF Core 10 is now the supported target)
 1. Provide migration tools and scripts
 2. Update documentation and examples
 3. Create upgrade path for existing applications
@@ -116,9 +116,8 @@ protected override async Task<IMigrationsDatabaseLock> AcquireDatabaseLockAsync(
 ## Testing Strategy
 
 ### Unit Tests
-- Create tests that validate behavior on both EF Core 9 and 10
-- Use conditional compilation in test methods
-- Validate SQL generation for both API versions
+- Create tests that validate behavior on EF Core 10
+- Validate SQL generation for the EF Core 10 API surface
 
 ### Integration Tests
 - Test migration scenarios
@@ -149,9 +148,9 @@ public async Task ExecuteUpdate_UpdatesSingleProperty()
 
 | EF Core Version | .NET Version | MySQL Provider Version | Status |
 |----------------|--------------|------------------------|--------|
-| 8.0.x          | .NET 8       | Current               | ✅ Supported |
-| 9.0.x          | .NET 9       | Current               | ✅ Supported |
-| 10.0.x         | .NET 10      | Future                | 🔄 In Progress |
+| 10.0.x         | .NET 10      | 10.0.x                | ✅ Current |
+| 9.0.x          | .NET 9       | 9.0.x                 | Previous release |
+| 8.0.x          | .NET 8       | 8.0.x                 | Previous release |
 
 ## Resources
 
@@ -161,8 +160,6 @@ public async Task ExecuteUpdate_UpdatesSingleProperty()
 
 ## Next Steps
 
-1. Continue monitoring EF Core 10 preview releases
-2. Test compatibility as .NET 10 becomes available
-3. Implement conditional compilation patterns
-4. Prepare migration tooling for existing applications
-5. Update documentation and examples
+1. Keep the provider aligned with EF Core 10 patch releases
+2. Maintain migration tooling for applications upgrading from EF Core 9
+3. Keep documentation and examples up to date

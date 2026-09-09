@@ -39,14 +39,9 @@ Release | Branch                                                                
 [5.0.4](https://www.nuget.org/packages/Microting.EntityFrameworkCore.MySql/5.0.4) | [5.0-maint](https://github.com/microting/Microting.EntityFrameworkCore.MySql/tree/5.0-maint) | >= 1.3.13          |  5.0.x  |    3.0+     | 2.1 | -
 [3.2.7](https://www.nuget.org/packages/Microting.EntityFrameworkCore.MySql/3.2.7) | [3.2-maint](https://github.com/microting/Microting.EntityFrameworkCore.MySql/tree/3.2-maint) | >= 0.69.10 < 1.0.0 |  3.1.x  |    2.0+     | 2.0 | 4.6.1+
 
-## EF Core 10 Preparation
+## EF Core 10
 
-This repository includes preparation work for EF Core 10 compatibility:
-
-- **Conditional Compilation**: Automatic EF Core version detection with `EFCORE10_OR_GREATER`, `EFCORE9_OR_GREATER`, `EFCORE8_OR_GREATER` constants
-- **Compatibility Helpers**: `EFCoreCompatibilityHelper` class for version-agnostic patterns
-- **Migration Guide**: Comprehensive documentation for breaking changes ([docs/EFCore10-Migration-Guide.md](docs/EFCore10-Migration-Guide.md))
-- **Test Infrastructure**: Example patterns for ExecuteUpdate API changes and migration lock interfaces
+This release targets **EF Core 10** and **.NET 10**.
 
 ### Key EF Core 10 Breaking Changes Addressed
 
@@ -54,7 +49,7 @@ This repository includes preparation work for EF Core 10 compatibility:
 2. **Migration Database Locks**: New interfaces for concurrency control during migrations
 3. **Query Expression Changes**: Various method signature updates
 
-The codebase is prepared for EF Core 10 upgrade when .NET 10 becomes available, with backward compatibility maintained for current versions.
+A migration guide with the breaking changes and upgrade patterns from EF Core 9 is available at [docs/EFCore10-Migration-Guide.md](docs/EFCore10-Migration-Guide.md).
 
 ### Packages
 
